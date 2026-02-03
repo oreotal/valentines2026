@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine?</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>ALEC JARED CAPELA ACEBO</h1>
+    <h2 id="question">Will you be my Valentine?<33</h2>
+    <button id="yes" onclick="yesClicked()">YES</button>
+    <button id="no" onclick="noClicked()">NO</button>
+  </div>
+
+  <script>
+    const questions = [
+      "Are you sure? :(",
+      "Really really sure? :'(",
+      "Think about it again...",
+      "You might regret this :((",
+      "What if I ask nicely? <33",
+      "Okay… last chance :((",
+      "Still no?? ToT",
+      "I’m not giving up >:(("
+    ];
+
+    let index = 0;
+
+    function noClicked() {
+      const question = document.getElementById("question");
+      question.textContent = questions[index];
+      index = (index + 1) % questions.length;
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = `
+      <div style="text-align:center; color:white;">
+        <h1 style="color:white;"> I LOVE YOU <33 </h1>
+            <video
+                src="valentines2026.mp4"
+                autoplay
+                loop
+                playsinline
+                style="
+                width: 80%;
+                max-width: 400px;
+                margin-top: 20px;
+                border-radius: 20px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            ">
+            </video>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
